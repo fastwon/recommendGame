@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("puzzle.jpg");
+}
+
+#mTable {
+	width: 80%;
+	height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(97, 106, 43, 0.3);
+	border-radius: 3px;
+}
+
+th {
+	height: 100px;
+	font-size: 40pt;
+	color: rgb(138, 111, 145);
+	background-color: rgb(15, 115, 136);
+	text-shadow: gray 3px 3px 3px;
+	border-radius: 3px;
+}
+
+#td1 {
+	font-size: 25pt;
+}
+
+#tr2 {
+	font-size: 15pt;
+	text-shadow: white 2px 2px 2px;
+	font-weight: bold;
+}
+.rTable {
+	width :80%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(97, 106, 43, 0.5);
+	border-radius: 3px;
+	font-size: 20pt;
+	color: rgb(220, 220, 120);
+	border: thick inset olive;
+	text-align: center;
+}
+
+.rTable img {
+	width: 150px;
+}
+
+#nTable {
+	width :80%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(97, 106, 43, 0.5);
+	border-radius: 3px;
+	font-size: 20pt;
+	color: rgb(220, 220, 120);
+	border: thick inset olive;
+	text-align: center;
+}
+
+#gnTd {
+	font-size: 30pt;
+	text-align: center;
+	color: rgb(220, 220, 120);
+	text-shadow: gray 2px 2px 2px;
+}
+
+.rTable td {
+	border: thin dotted olive;
+}
+
+a {
+	/* text-decoration: none; */
+	color: inherit;
+}
+
