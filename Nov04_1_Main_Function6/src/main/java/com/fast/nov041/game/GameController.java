@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class GameController {
 
 	@RequestMapping(value = "/recommend.do", method = RequestMethod.GET)
-	public String recommendGame(Game gm, HttpServletRequest req) {
-		/*GameDAO gDAO = new GameDAO();
-		gDAO.enterGame(gm, req);*/
+	public String recommendGame(HttpServletRequest req) {
 		return "output";
 	}
 }

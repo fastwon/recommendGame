@@ -11,6 +11,8 @@
 <script type="text/javascript">
 	$(function() {
 		$("#mBtn").click(function() {
+			let gameCount = 0;
+			
 			$(".rTable").empty();
 			let gameNameInput = document.getElementById("gameName1");
 			
@@ -21,18 +23,19 @@
 			}
 			
 			let page = 0;
-			for (var i = 0; i < 1000; i++) {
+			for (var i = 0; i < 50; i++) {
 				page = page + 1;
 				$.ajax({
-					url: "https://rawg-video-games-database.p.rapidapi.com/games?key=c7837645acdf417d821ec524ef5c86e9&page=" + page,
-					headers: {
-						"X-RapidAPI-Key": "7183360185msh7ec1a0fef9ab6b8p110dc7jsn400643c13c1e",
-						"X-RapidAPI-Host": "rawg-video-games-database.p.rapidapi.com"
-					},
+					url: "https://api.rawg.io/api/games?key=c7837645acdf417d821ec524ef5c86e9&page=" + page,
+					
 					success: function(showGenre) {
 						let iVal = $("input").val();
 	
 						$.each(showGenre.results, function(i2, s) {
+							if (gameCount >= 10) {
+								return false;
+							}
+							
 							if (s.name.toLowerCase().includes(iVal.toLowerCase())) {
 								let img = $("<img>").attr("src", s.background_image);
 								let td = $("<td></td>").append(img);
@@ -47,12 +50,15 @@
 								let td4 = $("<td></td>").append(aa2);
 								let tr = $("<tr></tr>").append(td, td2, td3, td4);
 								$(".rTable").append(tr);
+								
+								gameCount++;
+								
 								return true;
 							}
 							
 						});
 						
-					}
+					},
 				});
 			}
 			alert("success!");
@@ -62,7 +68,9 @@
 </head>
 <body>
 	<table id="mTable">
-		<th colspan="2">Recommend You Game</th>
+		<tr>
+			<th colspan="2">Recommend You Game</th>
+		</tr>
 		<tr>
 			<td id="td1" colspan="2" align="center">
 				write your game name, then we recommend you some similar games.
@@ -80,13 +88,17 @@
 	</table>
 	<table id="nTable">
 		<tr>
-			<td width="250px">Thumbnail</td>
-			<td>Name</td>
-			<td>Genres</td>
-			<td width="100px">Go!</td>
+			<td width="20%">Thumbnail</td>
+			<td width="35%">Name</td>
+			<td width="35%">Genres</td>
+			<td width="10%">Go!</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<table class="rTable">
+				</table>
+			</td>
 		</tr>
 	</table>
-		<table class="rTable">
-		</table>
 </body>
 </html>

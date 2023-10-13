@@ -31,20 +31,25 @@ th {
 	text-shadow: white 2px 2px 2px;
 	font-weight: bold;
 }
+
 .rTable {
-	width :80%;
+	width :100%;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: rgba(97, 106, 43, 0.5);
 	border-radius: 3px;
 	font-size: 20pt;
 	color: rgb(220, 220, 120);
-	border: thick inset olive;
+	border: thin inset olive;
 	text-align: center;
 }
 
 .rTable img {
 	width: 150px;
+}
+
+.rTable td {
+	border: thin dotted olive;
 }
 
 #nTable {
@@ -66,9 +71,6 @@ th {
 	text-shadow: gray 2px 2px 2px;
 }
 
-.rTable td {
-	border: thin dotted olive;
-}
 
 a {
 	/* text-decoration: none; */
